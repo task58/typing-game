@@ -1,0 +1,3 @@
+[submodule "Phaser3-Components"]
+	path = Phaser3-Components
+	url = https://github.com/task58/Phaser3-Components.git
