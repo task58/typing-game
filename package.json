@@ -1,0 +1,34 @@
+{
+  "name": "typinggame",
+  "version": "0.1.0",
+  "description": "typingGame",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx webpack --mode=development && npx webpack serve",
+    "start": "npx webpack --mode=development && npx electron dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/task58/typing-game.git"
+  },
+  "author": "task58",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/task58/typing-game/issues"
+  },
+  "homepage": "https://github.com/task58/typing-game#readme",
+  "dependencies": {
+    "phaser": "^3.52.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^7.0.0",
+    "electron": "^11.2.3",
+    "expose-loader": "^2.0.0",
+    "html-webpack-plugin": "^5.0.0",
+    "ts-loader": "^8.0.16",
+    "typescript": "^4.1.3",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
