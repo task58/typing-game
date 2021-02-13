@@ -25,6 +25,7 @@
     "electron": "^11.2.3",
     "expose-loader": "^2.0.0",
     "html-webpack-plugin": "^5.0.0",
+    "phaser3-components-ts": "file:Phaser3-Components/ts",
     "ts-loader": "^8.0.16",
     "typescript": "^4.1.3",
     "webpack": "^5.21.2",

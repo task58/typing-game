@@ -1,7 +1,10 @@
 import "../data"
 import { data } from "../data"
+import { InputManager } from "phaser3-components-ts/InputManager"
 
-export default class TitleScene extends Phaser.Scene{
+export class TitleScene extends Phaser.Scene{
+    private inputManager:InputManager
+
     constructor(){
         super({
             key : "title"
@@ -16,5 +19,12 @@ export default class TitleScene extends Phaser.Scene{
         this.add.sprite(centerX,centerY,"title")
 
         this.add.text(centerX,centerY + 150,"Press the spacebar to start!",{color : "#000000"})
+    }
+
+    update():void{
+        if(this.inputManager.getKeyDown("SPASE")){
+            this.scene.start("menu");
+        }
+
     }
 }
