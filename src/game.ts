@@ -3,7 +3,7 @@ import {Scenes} from "./scenes/scenes";
 
 const config: Phaser.Types.Core.GameConfig = {
     title: "Green Typing",    //タイトル
-    version: "0.0.1",       //バージョン
+    version: "0.1.0",       //バージョン
     type: Phaser.AUTO,      //canvasかwebGLかを自動選択
     scene: Scenes,      //利用するSceneクラス
     scale : {

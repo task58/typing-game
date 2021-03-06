@@ -42,7 +42,9 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'src/Assets/', to: 'Assets/' }
+        { from: 'src/Assets/', to: 'Assets/' },
+        { from: "src/words.json" , to : "words.json"},
+        { from: "src/window.js", to : "window.js"}
       ]
     })
   ],

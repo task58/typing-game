@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx webpack --mode=development && npx webpack serve",
     "build:dev": "npx webpack --mode=development",
-    "build:pro": "npx webpack --mode=production",
+    "build:pro": "npx webpack --mode=production -o app",
     "start":"npx electron ."
   },
   "repository": {

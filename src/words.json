@@ -1,0 +1,25 @@
+{
+    "fruits" : {
+        "name" : "fruits",
+        "timeLimit" : 10000,
+        "words" : [
+            "APPLE",
+            "BANANA",
+            "MELON",
+            "PEACH",
+            "KIWIFRUIT"
+        ]
+    },
+    "Vegetables" : {
+        "name" : "Vegetables",
+        "timeLimit" : 9000,
+        "words":[
+            "CABBAGE",
+            "LETTUCE",
+            "CUCUMBER",
+            "CARROT",
+            "RADISH",
+            "ONION"
+        ]
+    }
+}
