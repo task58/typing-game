@@ -7,6 +7,6 @@
       "strict": false
     },
     "include" : [
-        "src/**/*"
+        "src/**/*", "window.js"
     ]
 }

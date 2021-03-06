@@ -1,16 +1,21 @@
-import { data } from "../data";
-
+import { Scene } from "phaser";
 export class LoadScene extends Phaser.Scene {
-
 
     constructor() {
         super({ key: 'load', active: false });
     }
 
+    init():void{
+        this.scene.launch("ScreenManager")
+    }
+
     preload() {
 
-        let centerX = data.window.width / 2;
-        let centerY = data.window.height / 2;
+        let centerX = this.game.canvas.width/ 2;
+        let centerY = this.game.canvas.height / 2;
+
+        let typeText = this.add.text(centerX,30,"loading files...",{fontSize : "40px"})
+        typeText.setOrigin(0.5);
 
         //プログレスバー用のgraphics
         let progressBar = this.add.graphics();
@@ -36,13 +41,20 @@ export class LoadScene extends Phaser.Scene {
         //すべてのロードが完了したときの処理
         this.load.on('complete', function () {
             text.text = 'complete';
-            this.start();
-        },{start : ()=>this.scene.start("title")});
-
+            function start(scene){
+                scene.start("title")
+            }
+            setTimeout(start,3000,this.scene);
+        },{scene:this.scene});
+        
     }
 
     create(){
-        this.load.image("title","Assets/images/Title.png")
+
+        this.load.image("title","Assets/images/Title.png");
+        this.load.json("words","words.json");
+        this.load.css("Assets/style");
         this.load.start();
     }
 }
+

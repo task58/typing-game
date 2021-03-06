@@ -2,11 +2,13 @@
 var path = require("path");
 var pathToPhaser = path.join(__dirname, "/node_modules/phaser/");
 var phaser = path.join(pathToPhaser, "dist/phaser.js");
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');  
 
 //webpackの出力設定
 module.exports = {
+    mode : "production",
     //実行開始地点となるファイル
     entry: './src/game.ts',
     //出力先
@@ -28,7 +30,10 @@ module.exports = {
         options: {
           exposes:['phaser']
         }
-      }
+      },
+      
+      
+      
     ]
   },
   plugins: [
@@ -44,7 +49,7 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".js"],
     alias: {
-      phaser: phaser
+      phaser: phaser,
     }
   },
   devServer: {
