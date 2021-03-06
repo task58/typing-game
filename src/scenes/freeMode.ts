@@ -5,9 +5,9 @@ import { Char, TextCharList } from "../text";
 export class FreeModeScene extends Phaser.Scene{
     private jsonData:any;
     private words:Array<string>;
+    private notDisplayedWords:Array<string>;
     private wordText:TextCharList
     private nextWord:boolean;
-    private typeCount:number;
     private inputManager:InputManager;
     private word:Array<string>;
 
@@ -16,6 +16,7 @@ export class FreeModeScene extends Phaser.Scene{
             key : "freemode"
         })
         this.words = new Array<string>();
+        this.notDisplayedWords = new Array<string>();
     }
 
     init(){
@@ -62,16 +63,18 @@ export class FreeModeScene extends Phaser.Scene{
 
     update(){
         if(this.nextWord){
+            if(this.notDisplayedWords.length == 0){
+                this.notDisplayedWords = this.words.slice(0,this.words.length);
+            }
             this.nextWord=false;
-            let index = Math.floor(Math.random() * (this.words.length))
-            let str = this.words[index]
+            let index = Math.floor(Math.random() * (this.notDisplayedWords.length))
+            let str = this.notDisplayedWords.splice(index,1)[0]
             this.word = str.split("");
             let chars = new Array<Char>();
             for(let char of this.word){
                 chars.push(new Char(char))
             }
             this.wordText = new TextCharList(this,chars)
-            this.typeCount = 0;
         }
         
         if(this.inputManager.getKeyDown(this.wordText.getNowChar())){
